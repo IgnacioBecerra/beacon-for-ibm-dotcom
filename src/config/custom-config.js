@@ -36,6 +36,9 @@ const UIStrings = {
   /** Description of IBM.com page data audits. This is displayed at the top of a list of audits focused on IBM-specific meta data. */
   pageDataCategoryDescription:
     'These checks ensure that key data is being set on your page, such as the Digital Data Object, locale, meta, analytics, and cookie data.',
+  carbonForIBMDotcomTitle: 'Carbon for IBM.com',
+  carbonForIBMDotcomDescription:
+    'Carbon for IBM.com is the open source design system for IBM.com’s digital experiences. The system consists of working code, design tools, and resources and is tailored to IBM.com website page makers.',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
@@ -43,7 +46,12 @@ const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 module.exports = {
   extends: 'lighthouse:default',
   settings: {
-    onlyCategories: ['legal', 'page-data', 'page-content'],
+    onlyCategories: [
+      'legal',
+      'page-data',
+      'page-content',
+      'carbon-for-ibm-dotcom',
+    ],
   },
   passes: [
     {
@@ -51,6 +59,8 @@ module.exports = {
       gatherers: [
         `${constants.paths.gatherer}/page-data/ddo/ddo-gatherer`,
         `${constants.paths.gatherer}/legal/legal-links-gatherer`,
+        `${constants.paths.gatherer}/carbon-for-ibm-dotcom/components-gatherer`,
+        `${constants.paths.gatherer}/carbon-for-ibm-dotcom/v18-gatherer`,
         // `${constants.paths.gatherer}/page-data/lang-attribute-gatherer`,
         // `${constants.paths.gatherer}/page-content/scripts-gatherer`,
       ],
@@ -60,10 +70,22 @@ module.exports = {
     `${constants.paths.audit}/page-data/ddo/ddo-country-audit`,
     `${constants.paths.audit}/page-data/ddo/ddo-language-audit`,
     `${constants.paths.audit}/page-data/ddo/ddo-version-audit`,
+    `${constants.paths.audit}/page-data/ddo/ddo-version-check-audit`,
     `${constants.paths.audit}/legal/cookie-preferences-audit`,
     `${constants.paths.audit}/legal/accessibility-link-audit`,
     `${constants.paths.audit}/legal/privacy-link-audit`,
     `${constants.paths.audit}/legal/terms-of-use-link-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/v18-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/masthead-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/footer-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/leadspace-heading-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/leadspace-description-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/content-block-heading-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/callout-quote-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/card-group-number-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/card-eyebrow-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/card-heading-audit`,
+    `${constants.paths.audit}/carbon-for-ibm-dotcom/card-copy-audit`,
     // `${constants.paths.audit}/page-data/lang-attribute-audit`,
   ],
   groups: {
@@ -79,6 +101,10 @@ module.exports = {
       title: UIStrings.northstarGroupTitle,
       description: str_(UIStrings.northstarGroupDescription),
     },
+    'carbon-for-ibm-dotcom': {
+      title: UIStrings.carbonForIBMDotcomTitle,
+      description: str_(UIStrings.carbonForIBMDotcomDescription),
+    },
   },
   categories: {
     'page-data': {
@@ -87,6 +113,11 @@ module.exports = {
         { id: 'ddo-country-audit', weight: 1, group: 'digital-data-object' },
         { id: 'ddo-language-audit', weight: 1, group: 'digital-data-object' },
         { id: 'ddo-version-audit', weight: 1, group: 'digital-data-object' },
+        {
+          id: 'ddo-version-check-audit',
+          weight: 3,
+          group: 'digital-data-object',
+        },
       ],
     },
     legal: {
@@ -111,6 +142,58 @@ module.exports = {
           id: 'terms-of-use-link-audit',
           weight: 1,
           group: 'legal',
+        },
+      ],
+    },
+    'carbon-for-ibm-dotcom': {
+      title: UIStrings.carbonForIBMDotcomTitle,
+      auditRefs: [
+        { id: 'masthead-audit', weight: 1, group: 'carbon-for-ibm-dotcom' },
+        { id: 'footer-audit', weight: 1, group: 'carbon-for-ibm-dotcom' },
+        {
+          id: 'leadspace-heading-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'leadspace-description-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'content-block-heading-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'callout-quote-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'card-group-number-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'card-eyebrow-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'card-heading-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'card-copy-audit',
+          weight: 1,
+          group: 'carbon-for-ibm-dotcom',
+        },
+        {
+          id: 'v18-audit',
+          weight: 3,
+          group: 'carbon-for-ibm-dotcom',
         },
       ],
     },

@@ -7,14 +7,14 @@
 'use strict';
 
 const Audit = require('lighthouse').Audit;
-const i18n = require('../../../../node_modules/lighthouse/lighthouse-core/lib/i18n/i18n.js');
+const i18n = require('../../../node_modules/lighthouse/lighthouse-core/lib/i18n/i18n.js');
 
 const UIStrings = {
-  title: 'Digital Data Object `version` property is set.',
+  title: 'Carbon for IBM.com Masthead component exists on the page',
   failureTitle:
-    'Digital Data Object Carbon for IBM.com `version` property is missing.',
+    'Carbon for IBM.com Masthead component does not exist on the page.',
   description:
-    'This property shows what Carbon for IBM.com package is being used on a page, as well as the version. This information can be helpful in troubleshooting bugs when authoring with Carbon for IBM.com packages. [Learn more](https://github.com/carbon-design-system/carbon-for-ibm-dotcom/blob/master/docs/building-for-ibm-dotcom.md#digital-data-object).',
+    'The Masthead component is a fundamental navigational component for IBM.com that displays consistently at the top of each page. [Learn more](https://www.ibm.com/standards/web/carbon-for-ibm-dotcom/components/masthead).',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
@@ -22,18 +22,18 @@ const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 /**
  * @file Audits if page contains the IBM Digital Data Object (DDO)
  */
-class DDOAudit extends Audit {
+class CarbonForIBMDotcomAudit extends Audit {
   /**
    * @returns {*} {LH.Audit.Meta}
    */
   static get meta() {
     return {
-      id: 'ddo-version-audit',
+      id: 'masthead-audit',
       title: str_(UIStrings.title),
       failureTitle: str_(UIStrings.failureTitle),
       description: str_(UIStrings.description),
       // The name of the custom gatherer class that provides input to this audit.
-      requiredArtifacts: ['CheckDDO'],
+      requiredArtifacts: ['CheckComponents'],
     };
   }
 
@@ -42,17 +42,20 @@ class DDOAudit extends Audit {
    * @returns {*} Audit artifacts
    */
   static audit(artifacts) {
-    const loadMetrics = artifacts.CheckDDO.page.pageInfo.version;
-    const hasVersion = typeof loadMetrics !== 'undefined';
+    const loadMetrics = artifacts.CheckComponents.filter((link) => {
+      return link.dataAutoid === 'dds--masthead';
+    });
+
+    const hasMasthead = loadMetrics.length !== 0;
 
     // binary scoring
-    const score = hasVersion ? 1 : 0;
+    const score = hasMasthead ? 1 : 0;
 
     return {
-      rawValue: hasVersion,
+      rawValue: hasMasthead,
       score: Number(score),
     };
   }
 }
 
-module.exports = DDOAudit;
+module.exports = CarbonForIBMDotcomAudit;
