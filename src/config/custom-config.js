@@ -46,7 +46,7 @@ const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 module.exports = {
   extends: 'lighthouse:default',
   settings: {
-    onlyCategories: ['legal', 'page-data', 'carbon-for-ibm-dotcom'],
+    onlyCategories: ['legal', 'page-data', 'carbon-for-ibm-dotcom', 'carbon-design-system'],
   },
   passes: [
     {
@@ -56,6 +56,7 @@ module.exports = {
         `${constants.paths.gatherer}/legal/legal-links-gatherer`,
         `${constants.paths.gatherer}/carbon-for-ibm-dotcom/components-gatherer`,
         `${constants.paths.gatherer}/carbon-for-ibm-dotcom/v18-gatherer`,
+        `${constants.paths.gatherer}/carbon-design-system/styles-gatherer`,
       ],
     },
   ],
@@ -79,6 +80,7 @@ module.exports = {
     `${constants.paths.audit}/carbon-for-ibm-dotcom/card-eyebrow-audit`,
     `${constants.paths.audit}/carbon-for-ibm-dotcom/card-heading-audit`,
     `${constants.paths.audit}/carbon-for-ibm-dotcom/card-copy-audit`,
+    `${constants.paths.audit}/carbon-design-system/color-usage-audit`,
   ],
   groups: {
     'digital-data-object': {
@@ -97,6 +99,10 @@ module.exports = {
       title: UIStrings.carbonForIBMDotcomTitle,
       description: str_(UIStrings.carbonForIBMDotcomDescription),
     },
+    'carbon-design-system': {
+      title: "Carbon Design System",
+      description: "Test" //TODO
+    }
   },
   categories: {
     'page-data': {
@@ -189,5 +195,15 @@ module.exports = {
         },
       ],
     },
+    'carbon-design-system': {
+      title: "Carbon Design System",
+      auditRefs: [
+        {
+          id: 'color-usage-audit',
+          weight: 1,
+          group: 'carbon-design-system'
+        }
+      ]
+    }
   },
 };
