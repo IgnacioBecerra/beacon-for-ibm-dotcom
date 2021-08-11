@@ -56,7 +56,6 @@ module.exports = {
         `${constants.paths.gatherer}/legal/legal-links-gatherer`,
         `${constants.paths.gatherer}/carbon-for-ibm-dotcom/components-gatherer`,
         `${constants.paths.gatherer}/carbon-for-ibm-dotcom/v18-gatherer`,
-        `${constants.paths.gatherer}/carbon-design-system/styles-gatherer`,
       ],
     },
   ],
