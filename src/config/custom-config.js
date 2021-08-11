@@ -46,7 +46,12 @@ const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 module.exports = {
   extends: 'lighthouse:default',
   settings: {
-    onlyCategories: ['legal', 'page-data', 'carbon-for-ibm-dotcom', 'carbon-design-system'],
+    onlyCategories: [
+      'legal',
+      'page-data',
+      'carbon-for-ibm-dotcom',
+      'carbon-design-system',
+    ],
   },
   passes: [
     {
@@ -99,9 +104,9 @@ module.exports = {
       description: str_(UIStrings.carbonForIBMDotcomDescription),
     },
     'carbon-design-system': {
-      title: "Carbon Design System",
-      description: "Test" //TODO
-    }
+      title: 'Carbon Design System',
+      description: 'Test', //TODO
+    },
   },
   categories: {
     'page-data': {
@@ -195,14 +200,14 @@ module.exports = {
       ],
     },
     'carbon-design-system': {
-      title: "Carbon Design System",
+      title: 'Carbon Design System',
       auditRefs: [
         {
           id: 'color-usage-audit',
           weight: 1,
-          group: 'carbon-design-system'
-        }
-      ]
-    }
+          group: 'carbon-design-system',
+        },
+      ],
+    },
   },
 };
