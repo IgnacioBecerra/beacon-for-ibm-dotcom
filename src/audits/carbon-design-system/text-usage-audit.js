@@ -188,9 +188,13 @@ class TextUsageAudit extends Audit {
       filteredStyles.forEach((style) => {
         const str = style.split(':');
         str[0] = str[0].trim();
+
+        /* eslint-disable no-useless-escape */
         let tokenValue = !str[1].startsWith('var')
           ? str[1]
           : str[1].match(/\,(.*)\)/)[1];
+        /* eslint-enable no-useless-escape */
+
         tokenValue = tokenValue.split('}')[0];
 
         if (!tokenArray[str[0]]) tokenArray[str[0]] = [];
@@ -204,6 +208,7 @@ class TextUsageAudit extends Audit {
     let diffValues = 0;
     let wrongTokens = {};
     for (let key in tokenArray) {
+      // eslint-disable-next-line no-prototype-builtins
       if (textStyles.hasOwnProperty(key)) {
         let difference = tokenArray[key].filter(
           (x) => !textStyles[key].includes(x)
