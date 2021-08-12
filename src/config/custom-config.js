@@ -85,6 +85,7 @@ module.exports = {
     `${constants.paths.audit}/carbon-for-ibm-dotcom/card-heading-audit`,
     `${constants.paths.audit}/carbon-for-ibm-dotcom/card-copy-audit`,
     `${constants.paths.audit}/carbon-design-system/color-usage-audit`,
+    `${constants.paths.audit}/carbon-design-system/text-usage-audit`,
   ],
   groups: {
     'digital-data-object': {
@@ -204,6 +205,11 @@ module.exports = {
       auditRefs: [
         {
           id: 'color-usage-audit',
+          weight: 1,
+          group: 'carbon-design-system',
+        },
+        {
+          id: 'text-usage-audit',
           weight: 1,
           group: 'carbon-design-system',
         },
