@@ -13,7 +13,7 @@ const UIStrings = {
   title: 'Carbon Design System Typograhy tokens are not being overwritten.',
   failureTitle: 'Carbon Design System Typograhy tokens are being overwritten.',
   description:
-    'The Carbon Design System Typograhy token values must adhere to the specified guidelines for all themes. [Learn more](https://www.carbondesignsystem.com/guidelines/color/usage/)',
+    'The Carbon Design System Typograhy token values must adhere to the specified guidelines for all themes. [Learn more](https://www.carbondesignsystem.com/guidelines/typography/overview)',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
