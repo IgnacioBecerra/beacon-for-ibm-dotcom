@@ -25,7 +25,7 @@ const colorJson = {
   '--cds-interactive-03': ['#0f62fe', '#fff'],
   '--cds-interactive-04': ['#0f62fe', '#4589ff'],
   '--cds-danger-01': ['#da1e28'],
-  '--cds-danger-02': ['#da1e28, #da1e28', '#ff8389', '#fa4d56'],
+  '--cds-danger-02': ['#da1e28', '#ff8389', '#fa4d56'],
   '--cds-ui-01': ['#f4f4f4', '#fff', '#393939', '#262626'],
   '--cds-ui-02': ['#fff', '#f4f4f4', '#525252', '#393939'],
   '--cds-ui-03': ['#e0e0e0', '#525252', '#393939'],
@@ -112,8 +112,6 @@ class ColorUsageAudit extends Audit {
   static audit(artifacts) {
     const loadMetrics = artifacts.CSSUsage;
 
-    console.log(artifacts.CheckStyles);
-
     let tokenArray = [];
     loadMetrics.stylesheets.forEach((rules) => {
       const filteredStyles = rules.content
@@ -141,7 +139,7 @@ class ColorUsageAudit extends Audit {
     });
 
     let diffValues = 0;
-    let wrongTokens = {};
+    let tableRows = [];
     for (let key in tokenArray) {
       // eslint-disable-next-line no-prototype-builtins
       if (colorJson.hasOwnProperty(key)) {
@@ -150,7 +148,11 @@ class ColorUsageAudit extends Audit {
         );
 
         if (difference.length > 0) {
-          wrongTokens[key] = difference;
+          tableRows.push({
+            name: key,
+            'wrong-value': difference.toString(),
+            'should-equal': colorJson[key].toString(),
+          });
         }
         diffValues += difference.length;
       }
@@ -163,10 +165,18 @@ class ColorUsageAudit extends Audit {
       ? `${diffValues} color tokens with different values`
       : '';
 
+    const headings = [
+      { key: 'name', itemType: 'text', text: 'Token name' },
+      { key: 'wrong-value', itemType: 'text', text: 'Wrong value' },
+      { key: 'should-equal', itemType: 'text', text: 'Should equal' },
+    ];
+    const details = Audit.makeTableDetails(headings, tableRows);
+
     return {
       rawValue: loadMetrics,
       score: Number(score),
       displayValue: displayString,
+      details,
     };
   }
 }

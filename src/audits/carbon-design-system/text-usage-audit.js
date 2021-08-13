@@ -176,8 +176,6 @@ class TextUsageAudit extends Audit {
   static audit(artifacts) {
     const loadMetrics = artifacts.CSSUsage;
 
-    console.log(artifacts.CheckStyles);
-
     let tokenArray = [];
     loadMetrics.stylesheets.forEach((rules) => {
       const filteredStyles = rules.content
@@ -206,7 +204,7 @@ class TextUsageAudit extends Audit {
     });
 
     let diffValues = 0;
-    let wrongTokens = {};
+    let tableRows = [];
     for (let key in tokenArray) {
       // eslint-disable-next-line no-prototype-builtins
       if (textStyles.hasOwnProperty(key)) {
@@ -215,7 +213,11 @@ class TextUsageAudit extends Audit {
         );
 
         if (difference.length > 0) {
-          wrongTokens[key] = difference;
+          tableRows.push({
+            name: key,
+            'wrong-value': difference.toString(),
+            'should-equal': textStyles[key].toString(),
+          });
         }
         diffValues += difference.length;
       }
@@ -228,10 +230,18 @@ class TextUsageAudit extends Audit {
       ? `${diffValues} typograhy tokens with different values`
       : '';
 
+    const headings = [
+      { key: 'name', itemType: 'text', text: 'Token name' },
+      { key: 'wrong-value', itemType: 'text', text: 'Wrong value' },
+      { key: 'should-equal', itemType: 'text', text: 'Should equal' },
+    ];
+    const details = Audit.makeTableDetails(headings, tableRows);
+
     return {
       rawValue: loadMetrics,
       score: Number(score),
       displayValue: displayString,
+      details,
     };
   }
 }

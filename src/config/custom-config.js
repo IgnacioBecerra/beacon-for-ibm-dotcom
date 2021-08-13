@@ -39,6 +39,9 @@ const UIStrings = {
   carbonForIBMDotcomTitle: 'Carbon for IBM.com',
   carbonForIBMDotcomDescription:
     'Carbon for IBM.com is the open source design system for IBM.com’s digital experiences. The system consists of working code, design tools, and resources and is tailored to IBM.com website page makers.',
+  carbonDesignSystemTitle: 'Carbon Design System',
+  carbonDesignSystemDescription:
+    'Carbon is IBM’s open source design system for products and digital experiences. With the IBM Design Language as its foundation, the system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
@@ -105,8 +108,8 @@ module.exports = {
       description: str_(UIStrings.carbonForIBMDotcomDescription),
     },
     'carbon-design-system': {
-      title: 'Carbon Design System',
-      description: 'Test', //TODO
+      title: UIStrings.carbonDesignSystemTitle,
+      description: str_(UIStrings.carbonDesignSystemDescription),
     },
   },
   categories: {
