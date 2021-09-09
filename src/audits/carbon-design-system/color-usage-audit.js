@@ -128,7 +128,7 @@ class ColorUsageAudit extends Audit {
         let tokenValue = !str[1].startsWith('var')
           ? str[1]
           : str[1].match(/\,(.*)\)/)[1];
-        tokenValue = tokenValue.split('}')[0];
+        tokenValue = tokenValue.split('}')[0].trim();
         /* eslint-enable no-useless-escape */
 
         if (!tokenArray[str[0]]) tokenArray[str[0]] = [];

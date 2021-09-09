@@ -53,7 +53,8 @@ class DDOAudit extends Audit {
   static audit(artifacts) {
     const loadMetrics = artifacts.CheckDDO.page.pageInfo.version;
     const hasVersion = typeof loadMetrics !== 'undefined';
-    const versionDiff = latestVersion !== loadMetrics;
+    const versionDiff =
+      latestVersion.split('v')[1] !== loadMetrics.split('v')[1];
 
     // binary scoring
     const score = !versionDiff ? 1 : 0;

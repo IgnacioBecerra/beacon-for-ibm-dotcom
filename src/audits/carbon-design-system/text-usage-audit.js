@@ -194,11 +194,12 @@ class TextUsageAudit extends Audit {
           : str[1].match(/\,(.*)\)/)[1];
         /* eslint-enable no-useless-escape */
 
-        tokenValue = tokenValue.split('}')[0];
+        tokenValue = tokenValue.split('}')[0].trim();
 
         if (!tokenArray[str[0]]) tokenArray[str[0]] = [];
 
         if (tokenArray[str[0]].indexOf(tokenValue) === -1) {
+          if (tokenValue[0] === '.') tokenValue = `0${tokenValue}`;
           tokenArray[str[0]].push(tokenValue);
         }
       });
@@ -225,7 +226,7 @@ class TextUsageAudit extends Audit {
     }
 
     // binary scoring
-    const score = diffValues.length > 0 ? 0 : 1;
+    const score = diffValues.length ? 1 : 0;
 
     const displayString = diffValues
       ? `${diffValues} typograhy tokens with different values`
