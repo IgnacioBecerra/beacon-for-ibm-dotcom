@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>beacon-for-ibm-dotcom</h1>
+<blockquote>
+<p>Beacon for IBM.com analyzes web pages for compliance with IBM.com web
+standards, the IBM Design Language, and best practices.</p>
+</blockquote>
+<p>Beacon for IBM.com leverages Google
+<a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> to perform specific
+audits on apps, sites, and pages. This ensures that users can have the best
+experience when visiting our sites. Please visit
+<a href="https://www.ibm.com/standards/web/">web standards</a> and
+<a href="https://www.ibm.com/standards/web/carbon-for-ibm-dotcom/">Carbon for IBM.com</a>
+for more information on designing and developing for IBM.com.</p>
+<h2>Getting started</h2>
+<pre class="prettyprint source lang-bash"><code>npm i beacon-for-ibm-dotcom
+</code></pre>
+<p>If you prefer <a href="https://yarnpkg.com/en/">Yarn</a>, use the following command
+instead:</p>
+<pre class="prettyprint source lang-bash"><code>yarn add beacon-for-ibm-dotcom
+</code></pre>
+<h2>Usage</h2>
+<pre class="prettyprint source lang-bash"><code>beacon-for-ibm-dotcom -u https://www.ibm.com
+</code></pre>
+<p>By default, the results are written to an HTML file in the root directory. Since
+Beacon is powered by Lighthouse, there are a plenty of built-in
+<a href="https://github.com/GoogleChrome/lighthouse#cli-options">CLI options</a> available
+to customize the output.</p>
+<blockquote>
+<p>Note: Beacon for IBM.com uses custom audits to ensure compliance with IBM.com
+web standards and is meant to be used on IBM.com sites only. For general web
+audits please use Google Lighthouse, which is available as an
+<a href="https://www.npmjs.com/package/lighthouse">npm package</a> and built-in Chrome
+extension.</p>
+</blockquote>
+<h3>Options</h3>
+<pre class="prettyprint source"><code>$ beacon-for-ibm-dotcom --help
+
+beacon-for-ibm-dotcom -u &lt;url> [options]
+
+URL:
+  --url, -u       URL to audit [required]
+
+Output:
+  --output, -o    Output format. Supports 'html', 'json', 'csv'. [Default: 'html']
+  --raw, -r       Output results in raw format.
+</code></pre>
+<p>A full list of available audits can be seen
+<a href="https://ibm.github.io/beacon-for-ibm-dotcom/">here</a>.</p></article>
+    </section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-design-system/color-usage-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the Accessibility legal link</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-design-system_color-usage-audit.js.html">audits/carbon-design-system/color-usage-audit.js</a>, <a href="audits_carbon-design-system_color-usage-audit.js.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-design-system/text-usage-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the Accessibility legal link</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-design-system_text-usage-audit.js.html">audits/carbon-design-system/text-usage-audit.js</a>, <a href="audits_carbon-design-system_text-usage-audit.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/callout-quote-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>callout-quote</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_callout-quote-audit.js.html">audits/carbon-for-ibm-dotcom/callout-quote-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_callout-quote-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/card-copy-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>card</code> component copy.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_card-copy-audit.js.html">audits/carbon-for-ibm-dotcom/card-copy-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_card-copy-audit.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/card-eyebrow-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>card</code> component eyebrow.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_card-eyebrow-audit.js.html">audits/carbon-for-ibm-dotcom/card-eyebrow-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_card-eyebrow-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/card-group-number-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended number of items in the <code>card-group</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_card-group-number-audit.js.html">audits/carbon-for-ibm-dotcom/card-group-number-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_card-group-number-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/card-heading-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>card</code> component heading.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_card-heading-audit.js.html">audits/carbon-for-ibm-dotcom/card-heading-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_card-heading-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/content-block-heading-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>content-block</code> component heading.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_content-block-heading-audit.js.html">audits/carbon-for-ibm-dotcom/content-block-heading-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_content-block-heading-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/footer-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the <code>footer</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_footer-audit.js.html">audits/carbon-for-ibm-dotcom/footer-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_footer-audit.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/leadspace-description-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>leadspace</code> component description.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_leadspace-description-audit.js.html">audits/carbon-for-ibm-dotcom/leadspace-description-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_leadspace-description-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/leadspace-heading-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits the recommended amount of characters in the <code>leadspace</code> component heading.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_leadspace-heading-audit.js.html">audits/carbon-for-ibm-dotcom/leadspace-heading-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_leadspace-heading-audit.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/masthead-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the <code>masthead</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_masthead-audit.js.html">audits/carbon-for-ibm-dotcom/masthead-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_masthead-audit.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/carbon-for-ibm-dotcom/v18-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains Northstar v18 classes</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_carbon-for-ibm-dotcom_v18-audit.js.html">audits/carbon-for-ibm-dotcom/v18-audit.js</a>, <a href="audits_carbon-for-ibm-dotcom_v18-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/legal/accessibility-link-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the <code>Accessibility</code> link in the <code>footer</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_legal_accessibility-link-audit.js.html">audits/legal/accessibility-link-audit.js</a>, <a href="audits_legal_accessibility-link-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/legal/cookie-preferences-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the <code>Cookie Preferences</code> link in the <code>footer</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_legal_cookie-preferences-audit.js.html">audits/legal/cookie-preferences-audit.js</a>, <a href="audits_legal_cookie-preferences-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/legal/privacy-link-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the <code>Privacy</code> link in the <code>footer</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_legal_privacy-link-audit.js.html">audits/legal/privacy-link-audit.js</a>, <a href="audits_legal_privacy-link-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/legal/terms-of-use-link-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page contains the <code>Terms of use</code> link in the <code>footer</code> component.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_legal_terms-of-use-link-audit.js.html">audits/legal/terms-of-use-link-audit.js</a>, <a href="audits_legal_terms-of-use-link-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/page-data/ddo/ddo-country-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if <code>country</code> value is present in the Digital Data Object (DDO).</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_page-data_ddo_ddo-country-audit.js.html">audits/page-data/ddo/ddo-country-audit.js</a>, <a href="audits_page-data_ddo_ddo-country-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/page-data/ddo/ddo-language-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if <code>language</code> value is present in the Digital Data Object (DDO).</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_page-data_ddo_ddo-language-audit.js.html">audits/page-data/ddo/ddo-language-audit.js</a>, <a href="audits_page-data_ddo_ddo-language-audit.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/page-data/ddo/ddo-version-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if <code>version</code> value is present in the Digital Data Object (DDO).</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_page-data_ddo_ddo-version-audit.js.html">audits/page-data/ddo/ddo-version-audit.js</a>, <a href="audits_page-data_ddo_ddo-version-audit.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>audits/page-data/ddo/ddo-version-check-audit.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Audits if page is using the latest stable version of Carbon for IBM.com.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="audits_page-data_ddo_ddo-version-check-audit.js.html">audits/page-data/ddo/ddo-version-check-audit.js</a>, <a href="audits_page-data_ddo_ddo-version-check-audit.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CheckComponents.html">CheckComponents</a></li><li><a href="CheckDDO.html">CheckDDO</a></li><li><a href="CheckLegalLinks.html">CheckLegalLinks</a></li><li><a href="CheckV18.html">CheckV18</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getComponentsInDOM">getComponentsInDOM</a></li><li><a href="global.html#getLegalLinksInDOM">getLegalLinksInDOM</a></li><li><a href="global.html#getScriptsInDom">getScriptsInDom</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Sep 09 2021 20:33:19 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
