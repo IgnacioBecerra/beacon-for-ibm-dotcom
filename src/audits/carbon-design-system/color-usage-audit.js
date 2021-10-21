@@ -163,8 +163,6 @@ class ColorUsageAudit extends Audit {
       }
     }
 
-    console.log(diffValues);
-
     // binary scoring
     const score = !diffValues ? 1 : 0;
 
