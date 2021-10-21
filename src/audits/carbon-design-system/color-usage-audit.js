@@ -51,14 +51,18 @@ const colorJson = {
   '--cds-inverse-01': ['#fff', '#161616'],
   '--cds-inverse-02': ['#393939', '#f4f4f4'],
   '--cds-support-01': ['#da1e28', '#ff8389', '#fa4d56'],
-  '--cds-support-02': ['#198038', '#42be65'],
+  '--cds-support-02': ['#198038', '#42be65', '#24a148'],
   '--cds-support-03': ['#f1c21b'],
   '--cds-support-04': ['#0043ce', '#4589ff'],
   '--cds-inverse-support-01': ['#fa4d56', '#da1e28'],
   '--cds-inverse-support-02': ['#42be65', '#24a148'],
   '--cds-inverse-support-03': ['#f1c21b'],
-  '--cds-inverse-support-04': ['#4589ff', '#0043ce'],
-  '--cds-overlay-01': ['rgba(22,22,22,0.5)', 'rgba(22,22,22,0.7)'],
+  '--cds-inverse-support-04': ['#4589ff', '#0043ce', '#0f62fe'],
+  '--cds-overlay-01': [
+    'rgba(22,22,22,0.5)',
+    'rgba(22,22,22,0.7)',
+    'rgba(0,0,0,0.65)',
+  ],
   '--cds-focus': ['#0f62fe', '#fff'],
   '--cds-inverse-focus-ui': ['#fff', '#0f62fe'],
   '--cds-hover-primary': ['#0353e9'],
@@ -68,7 +72,7 @@ const colorJson = {
   '--cds-hover-ui': ['#e5e5e5', '#4c4c4c', '#353535'],
   '--cds-hover-light-ui': ['#e5e5e5', '#656565', '#4c4c4c'],
   '--cds-hover-selected-ui': ['#cacaca', '#656565', '#4c4c4c'],
-  '--cds-hover-danger': ['#ba1b23'],
+  '--cds-hover-danger': ['#ba1b23', '#b81921'],
   '--cds-hover-row': ['#e5e5e5', '#4c4c4c', '#353535'],
   '--cds-inverse-hover-ui': ['#4c4c4c', '#e5e5e5'],
   '--cds-active-primary': ['#002d9c'],
@@ -79,13 +83,13 @@ const colorJson = {
   '--cds-active-danger': ['#750e13'],
   '--cds-selected-ui': ['#e0e0e0', '#525252', '#393939'],
   '--cds-selected-light-ui': ['#e0e0e0', '#6f6f6f', '#525252'],
-  '--cds-highlight': ['#d0e2ff', '#edf5ff', '#002d9c', '#001d6c'],
+  '--cds-highlight': ['#d0e2ff', '#edf5ff', '#002d9c', '#001d6c', '#0043ce'],
   '--cds-skeleton-01': ['#e5e5e5', '#353535'],
   '--cds-skeleton-02': ['#c6c6c6', '#525252'],
   '--cds-visited-link': ['#8a3ffc', '#be95ff'],
   '--cds-disabled-01': ['#f4f4f4', '#fff', '#393939', '#262626'],
   '--cds-disabled-02': ['#c6c6c6', '#6f6f6f', '#525252'],
-  '--cds-disabled-03': ['#8d8d8d', '#6f6f6f'],
+  '--cds-disabled-03': ['#8d8d8d', '#6f6f6f', '#a8a8a8'],
 };
 
 /**
@@ -159,8 +163,10 @@ class ColorUsageAudit extends Audit {
       }
     }
 
+    console.log(diffValues);
+
     // binary scoring
-    const score = diffValues.length ? 1 : 0;
+    const score = !diffValues ? 1 : 0;
 
     const displayString = diffValues
       ? `${diffValues} color tokens with different values`
