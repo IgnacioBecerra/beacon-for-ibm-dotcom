@@ -11,10 +11,10 @@ const constants = require('../../config/constants');
 const i18n = require(constants.paths.i18n);
 
 const UIStrings = {
-  title: 'Carbon Design System Color tokens are not being overwritten.',
-  failureTitle: 'Carbon Design System Color tokens are being overwritten.',
+  title: 'Carbon Design System color tokens are not being overwritten.',
+  failureTitle: 'Carbon Design System color tokens are being overwritten.',
   description:
-    'The Carbon Design System Color token values must adhere to the specified guidelines for all themes. [Learn more](https://www.carbondesignsystem.com/guidelines/color/usage/)',
+    'Color token values must adhere to the guidelines specified by the Carbon Design System. [Learn more](https://www.carbondesignsystem.com/guidelines/color/usage/)',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
