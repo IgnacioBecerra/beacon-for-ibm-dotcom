@@ -21,7 +21,7 @@ const UIStrings = {
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
-const maxEyebrowLength = 25;
+const maxEyebrowLength = 20;
 
 /**
  * @file Audits the recommended amount of characters in the `card` component eyebrow.

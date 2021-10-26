@@ -21,7 +21,7 @@ const UIStrings = {
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
-const maxHeadingLength = 65;
+const maxHeadingLength = 40;
 
 /**
  * @file Audits the recommended amount of characters in the `leadspace` component heading.
